@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case-02</title>
+    <link rel="stylesheet" href="/css/case-02.css">
+  </head>
+  <body>
+    <div>
+      <div id="firstDiv"></div>
+      <div id="outerDiv">
+        <hr />
+        <div class="largeDiv">
+          <div id="secondDiv"></div>
+          <div id="thirdDiv"></div>
+          <div id="fourthDiv"></div>
+          <div id="fifthDiv"></div>
+        </div>
+        <hr />
+      </div>
+      <div id="sixthDiv"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      let colors = ["lightpink", "#bb5bc9", "red", "green", "blue", "yellow"];
+      setInterval(() => {
+        let last_value = colors.pop();
+        colors.unshift(last_value);
+        console.log(colors);
+
+        document.getElementById("firstDiv").style.backgroundColor = colors[0];
+        document.getElementById("secondDiv").style.backgroundColor = colors[1];
+        document.getElementById("thirdDiv").style.backgroundColor = colors[2];
+        document.getElementById("fourthDiv").style.backgroundColor = colors[3];
+        document.getElementById("fifthDiv").style.backgroundColor = colors[4];
+        document.getElementById("sixthDiv").style.backgroundColor = colors[5];
+      }, 1000);
+    </script>
+  </body>
+</html>
