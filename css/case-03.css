@@ -1,0 +1,52 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: black;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  display: flex;
+  gap: 5px;
+}
+
+.light {
+  width: 200px;
+  height: 80px;
+  background-color: wheat;
+  transition: opacity 0.3s;
+}
+
+.active {
+  opacity: 1;
+}
+
+#btn01 {
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  color: white;
+  background-color: red;
+  width: 160px;
+  margin-right: 10%;
+}
+#btn02 {
+  margin-top: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+  color: white;
+  background-color: blue;
+  width: 160px;
+  margin-right: 10%;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+}

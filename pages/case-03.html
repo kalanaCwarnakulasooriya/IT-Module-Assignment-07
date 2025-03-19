@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Case-03</title>
+    <link rel="stylesheet" href="/css/case-03.css">
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div id="firstDiv" class="light"></div>
+        <div id="secondDiv" class="light"></div>
+        <div id="thirdDiv" class="light"></div>
+        <div id="fourthDiv" class="light"></div>
+        <div id="fifthDiv" class="light"></div>
+      </div>
+    </section>
+    <div class="buttons">
+      <button id="btn01">Start</button>
+
+      <button id="btn02">Stop</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+      const light_count = 6;
+      let current_light = 0;
+      let direction = "RIGHT";
+      let intervalId = null;
+
+      updateLight = () => {
+        if (direction === "RIGHT") {
+          current_light++;
+
+          $(".light")
+            .eq(current_light - 1)
+            .css("background", "#800000");
+          $(".light")
+            .eq(current_light - 2)
+            .css("background", "#b61515");
+          $(".light")
+            .eq(current_light - 3)
+            .css("background", "#fc6060");
+          $(".light")
+            .eq(current_light - 4)
+            .css("background", "#f6c3c3");
+          $(".light")
+            .eq(current_light - 5)
+            .css("background", "white");
+
+          if (current_light == light_count - 1) {
+            direction = "LEFT";
+          }
+        } else {
+          current_light--;
+
+          $(".light")
+            .eq(current_light - 1)
+            .css("background", "#800000");
+          $(".light")
+            .eq(current_light - 2)
+            .css("background", "#b61515");
+          $(".light")
+            .eq(current_light - 3)
+            .css("background", "#fc6060");
+          $(".light")
+            .eq(current_light - 4)
+            .css("background", "#f6c3c3");
+          $(".light")
+            .eq(current_light - 5)
+            .css("background", "white");
+
+          if (current_light === 0) {
+            direction = "RIGHT";
+          }
+        }
+      };
+
+      $("#btn01").on("click", function () {
+        clearInterval(intervalId);
+        intervalId = setInterval(updateLight, 100);
+      });
+
+      $("#btn02").on("click", function () {
+        clearInterval(intervalId);
+      });
+    </script>
+  </body>
+</html>
